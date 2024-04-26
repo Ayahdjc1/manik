@@ -1,0 +1,284 @@
+body {
+    background-color: rgb(255, 255, 255); /* Белый фон */
+    margin: 0px !important;
+}
+header {
+    background-color: #ffffff;
+    padding: 20px;
+    text-align: center;
+}
+nav {
+    margin-top: 20px;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+#discount-line {
+    width: 100%;
+    text-align: center;
+    
+    border-bottom: 2px solid rgb(255, 146, 146); /* Линия с толщиной 2px */
+}
+#discount-line p {
+    background-color: white; /* Задний фон для текста */
+    padding: 0 40px; /* Отступы для текста */
+    position: relative;
+    
+    top: -5px; /* Сдвигаем текст вверх на 20px, чтобы он находился над линией */
+}
+#welcome-section {
+    background-image: url('1614428055_91-p-temnii-fon-instagramma-102.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 500px; /* Высота блока с приветственным текстом */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+.welcome-text h2 em {
+    font-style: italic; /* Делаем текст курсивом */
+    font-family: 'Bookman', serif;
+    font-size: 40px; /* Уменьшаем размер текста */
+    color: #ff8f8f;
+}
+.welcome-text p strong {
+    font-weight: bold; /* Делаем текст жирным */
+    font-family: 'Didot', serif; /* Меняем шрифт */
+    font-size: 2.9rem; /* Увеличиваем размер текста */
+    color: #ffffff;
+}
+.main.html{
+    font-family: 'Didot', serif;
+}
+.welcome-text button {
+    padding: 10px 30px;
+    font-size: 18px;
+    border: none;
+    background-color: #ff8f8f;
+    color: white;
+    cursor: pointer;
+    
+}
+.intro-content{
+    font-family: 'Bookman', serif;
+    font-size: 15px;
+    text-align: center;
+    color: #222222;
+}
+.intro-content_text_1
+{
+    font-family: 'Didot', serif;
+    font-size: 40px;
+    text-align: center;
+    color: #ff9595;
+}
+.intro-content_text_2
+{
+    font-family: 'Didot', serif;
+    font-size: 35px;
+    text-align: center;
+    color: #1d1d1d;
+}
+.intro-content_text_1,
+.intro-content_text_2 {
+    margin-bottom: 5px; /* Установите желаемое расстояние между блоками */
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.intro-content_text_1 img{
+    width: 100px;
+    margin: 20px 5px 10px 5px;
+}
+
+.gallery img {
+    width: 300px;
+    margin: 0 5px 10px 5px;
+}
+
+.contact-info {
+    background-color: #222222;
+
+    text-align: center;
+
+}
+
+.price-content_text_1
+{
+    font-family: 'Didot', serif;
+    font-size: 40px;
+    text-align: center;
+    color: #ff9595;
+}
+.price-content_text_2
+{
+    font-family: 'Bookman', serif;
+    font-size: 35px;
+    text-align: center;
+    color: #1d1d1d;
+}
+.price-content_text_1 h3 {
+    font-style: normal; /* Убираем курсив */
+}
+.price-content_text_2 p {
+    font-style: normal; /* Убираем курсив */
+}
+.price-content_text_1 img{
+    width: 100px;
+    margin: 20px 5px 10px 5px;
+}
+#price-list {
+    text-align: center;
+    padding: 20px;
+}
+.price-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.price-item {
+    margin: 15px 10px 10px 10px;
+    display: flex;
+    font-family: 'Didot', serif;
+    font-size: 35px;
+    align-items: center;
+}
+.price-item img {
+    width: 170px;
+    height: 170px;
+    margin-right: 10px; /* Отступ между изображением и текстом */
+}
+.price-item p {
+    font-size: 14px;
+    font-family: 'Didot', serif;
+    font-size: 15px;
+    color: #1d1d1d;
+}
+.contact-info {
+    background-color: #242424;
+    text-align: center;
+    max-width: 100%; /* Максимальная ширина блока контактной информации */
+    margin: 500px auto 0; /* Увеличиваем верхний отступ */
+}
+.contact-content {
+    display: flex;
+    flex-direction: column;
+}
+.map-container {
+    margin-bottom: 20px; /* Отступ между картой и текстом */
+    margin-top: -700px; /* Добавляем небольшой отрицательный отступ сверху */
+}
+.contact-details {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto; /* Это центрирует контейнер по горизонтали */
+    max-width: 2000px; /* Можете установить максимальную ширину по вашему усмотрению */
+}
+.contact-info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Добавим небольшой отступ между каждым блоком информации */
+}
+.contact-info-item img {
+    width: 30px; /* Размер изображения, который вы хотите */
+    margin-right: 10px; /* Отступ между изображением и текстом */
+}
+.contact-info-item p {
+    color: rgb(255, 255, 255);
+    margin-right: 5px; /* Добавляем отступ справа для каждого текстового блока */
+    
+    
+}
+.contact-details p:not(:last-child) {
+    margin-bottom: 30px; /* Отступ между параграфами */
+    position: center;
+}
+.modal {
+    display: none;
+    position: fixed; /* Используем фиксированное позиционирование */
+    z-index: 1;
+    left: 50%; /* Располагаем модальное окно по центру горизонтально */
+    top: 50%; /* Располагаем модальное окно по центру вертикально */
+    transform: translate(-50%, -50%); /* Центрируем модальное окно */
+    width: 400px;
+    height: 400px;
+    overflow: auto;
+    background-color: transparent;
+}
+
+
+.modal-content {
+    background-color: #ffffff;
+    margin: auto;
+    padding: 20px;
+    border: 2px solid #ffb4b4;
+    width: 80%;
+    position: relative; /* Устанавливаем относительное позиционирование для модального контента */
+}
+
+.close {
+    color: #ffb8b8;
+    position: absolute; /* Позиционируем кнопку закрытия абсолютно */
+    top: 10px;
+    right: 10px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+}
+.footer {
+    background-color: #3d3d3d; /* Серый цвет футера */
+    padding: 20px;
+    position: absolute; /* Позиционируем футер абсолютно */
+    bottom: 0; /* Размещаем футер внизу страницы */
+    width: 100%; /* Футер занимает всю ширину страницы */
+    z-index: 1; /* Устанавливаем z-index, чтобы футер был выше карты */
+}
+
+
+.map-container {
+    margin-top: -30%; /* Отрицательный верхний отступ для карты, чтобы она была под футером */
+    margin-left: 25%;
+}
+
+.col-md-6 map-container{
+    position: center;
+}
+
+@media only screen and (max-width: 767px) {
+    
+    .map-container {
+    margin-top: -30%; /* Отрицательный верхний отступ для карты, чтобы она была под футером */
+     margin-left: 0%;
+}
+}
+
+@media only screen and (max-width: 420px){
+    .welcome-text p strong {
+    font-weight: bold;
+    font-family: 'Didot', serif;
+    font-size: 2.1rem !important;
+    color: #ffffff;
+}
+}
+
