@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Nails Studio</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center my-4">Admin Panel - Update Price List</h2>
+        <form id="priceForm">
+            <div id="priceItems"></div>
+            <button type="button" class="btn btn-primary my-3" onclick="addPriceItem()">Add Item</button>
+            <button type="submit" class="btn btn-success">Save Changes</button>
+        </form>
+    </div>
+
+    <script>
+        const priceForm = document.getElementById('priceForm');
+        const priceItems = document.getElementById('priceItems');
+
+        function addPriceItem(item = {}) {
+            const itemDiv = document.createElement('div');
+            itemDiv.classList.add('form-group');
+            itemDiv.innerHTML = `
+                <input type="text" class="form-control my-2" name="image" placeholder="Image URL" value="${item.image || ''}" required>
+                <input type="text" class="form-control my-2" name="description" placeholder="Description" value="${item.description || ''}" required>
+                <input type="text" class="form-control my-2" name="price" placeholder="Price" value="${item.price || ''}" required>
+                <button type="button" class="btn btn-danger" onclick="this.parentElement.remove()">Remove</button>
+            `;
+            priceItems.appendChild(itemDiv);
+        }
+
+        function loadPriceList() {
+            fetch('price-list.json')
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach(addPriceItem);
+                })
+                .catch(error => console.error('Error loading price list:', error));
+        }
+
+        priceForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const items = [];
+            document.querySelectorAll('#priceItems .form-group').forEach(group => {
+                const image = group.querySelector('[name="image"]').value;
+                const description = group.querySelector('[name="description"]').value;
+                const price = group.querySelector('[name="price"]').value;
+                items.push({ image, description, price });
+            });
+
+            fetch('save_price_list.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(items)
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Price list updated successfully');
+                } else {
+                    alert('Error updating price list');
+                }
+            })
+            .catch(error => console.error('Error saving price list:', error));
+        });
+
+        document.addEventListener('DOMContentLoaded', loadPriceList);
+    </script>
+</body>
+</html>

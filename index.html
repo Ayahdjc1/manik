@@ -88,53 +88,44 @@
     </div>
 </div>
 
-<div id="price_text_1" class="text-center">
-    <div class="price-content_text_1">
-        <img src="origin-icon-tee-heal-the-world-foundation-logo-1439084.png" alt="Logo">
-        <h3>ПРАЙС</h3>
-    </div>
-</div>
-
-<div id="price_text_2" class="text-center">
-    <div class="price-content_text_2">
-        <p>ЛИСТ</p>
-    </div>
-</div>
-
-<div class="price-list">
-    <div class="price-gallery d-flex flex-wrap justify-content-center">
-        <div class="price-item">
-            <img src="1-1024x1024.png" alt="Manicure 1">
-            <p>Наращивание ногтей <br>или коррекция <br> от 500р</p>
-        </div>
-        <div class="price-item">
-            <img src="1-1024x1024.png" alt="Manicure 2">
-            <p>Педикюр комплексный <br> от 700р</p>
-        </div>
-        <div class="price-item">
-            <img src="1-1024x1024.png" alt="Manicure 2">
-            <p>Педикюр эстетический<br>(обработка пальчиков) <br> от 700р</p>
+    <!-- Existing content -->
+    <div id="price_text_1" class="text-center">
+        <div class="price-content_text_1">
+            <img src="origin-icon-tee-heal-the-world-foundation-logo-1439084.png" alt="Logo">
+            <h3>ПРАЙС</h3>
         </div>
     </div>
-</div>
 
-<div class="price-list">
-    <div class="price-gallery d-flex flex-wrap justify-content-center">
-        <div class="price-item">
-            <img src="1-1024x1024.png" alt="Manicure 1">
-            <p>Маникюр <br> от 500р</p>
-        </div>
-        <div class="price-item">
-            <img src="1-1024x1024.png" alt="Manicure 2">
-            <p>Маникюр с покрытием<br> гель-лак <br> от 700р</p>
-        </div>
-        <div class="price-item">
-            <img src="1-1024x1024.png" alt="Manicure 2">
-            <p>Укрепление<br> ногтей гелем <br> от 700р</p>
+    <div id="price_text_2" class="text-center">
+        <div class="price-content_text_2">
+            <p>ЛИСТ</p>
         </div>
     </div>
-</div>
 
+    <div class="price-list">
+        <div class="price-gallery d-flex flex-wrap justify-content-center" id="priceGallery"></div>
+    </div>
+    <!-- Existing content -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('price-list.json')
+                .then(response => response.json())
+                .then(data => {
+                    const priceGallery = document.getElementById('priceGallery');
+                    data.forEach(item => {
+                        const priceItem = document.createElement('div');
+                        priceItem.classList.add('price-item');
+                        priceItem.innerHTML = `
+                            <img src="${item.image}" alt="${item.description}">
+                            <p>${item.description} <br> ${item.price}</p>
+                        `;
+                        priceGallery.appendChild(priceItem);
+                    });
+                })
+                .catch(error => console.error('Error loading price list:', error));
+        });
+    </script>
 <div id="contact" class="contact-info text-center">
     <div class="container">
         <div class="row">
